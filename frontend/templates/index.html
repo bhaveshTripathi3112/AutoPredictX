@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoAdvisor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AutoAdvisor</h1>
+        <form id="car-form">
+            <div class="form-group">
+                <label for="brand">Brand:</label>
+                <input type="text" id="brand" name="brand" required placeholder="e.g., Maruti, Hyundai">
+            </div>
+            <div class="form-group">
+                <label for="model">Model:</label>
+                <input type="text" id="model" name="model" required placeholder="e.g., Swift, i20">
+            </div>
+            <div class="form-group">
+                <label for="vehicle_age">Vehicle Age (years):</label>
+                <input type="number" id="vehicle_age" name="vehicle_age" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="km_driven">Kilometers Driven:</label>
+                <input type="number" id="km_driven" name="km_driven" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="seller_type">Seller Type:</label>
+                <select id="seller_type" name="seller_type" required>
+                    <option value="Dealer">Dealer</option>
+                    <option value="Individual">Individual</option>
+                    <option value="Trustmark Dealer">Trustmark Dealer</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fuel_type">Fuel Type:</label>
+                <select id="fuel_type" name="fuel_type" required>
+                    <option value="Petrol">Petrol</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="CNG">CNG</option>
+                    <option value="LPG">LPG</option>
+                    <option value="Electric">Electric</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="transmission_type">Transmission:</label>
+                <select id="transmission_type" name="transmission_type" required>
+                    <option value="Manual">Manual</option>
+                    <option value="Automatic">Automatic</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mileage">Mileage (km/l):</label>
+                <input type="number" step="0.01" id="mileage" name="mileage" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="engine">Engine (CC):</label>
+                <input type="number" id="engine" name="engine" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="max_power">Max Power (bhp):</label>
+                <input type="number" step="0.01" id="max_power" name="max_power" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="seats">Seats:</label>
+                <input type="number" id="seats" name="seats" min="2" max="10" required>
+            </div>
+            <button type="submit">Predict Price</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
